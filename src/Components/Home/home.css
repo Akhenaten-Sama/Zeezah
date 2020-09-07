@@ -1,0 +1,59 @@
+.landing{
+	background-image: url(./img3.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	top: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+.container1{
+	display:grid;
+	grid-template-columns: 1fr;
+	justify-items:center;
+	align-items: center;
+	text-align: center;
+}
+
+
+.content1{
+	align-items: center;
+	text-align: center;
+}
+
+hr{
+	width:50;
+border-top: 1px solid #f8f8f8;
+border-bottom: 1px solid rgba(0, 0, 0 0.1);
+}
+
+
+
+.h3{
+	color:#f8f8f8;
+}
+.my-text{
+	font-size: 4em;
+	background-image: url(./png.png) ;
+	background-size: cover;
+	background-clip: text;
+	-webkit-background-clip:text;
+	color:transparent;
+	animation: moveBg 3s linear infinite;
+}
+h4{
+	font-size: 20px;
+}
+
+
+@keyframes moveBg {
+0%{
+    background-position: 0% 30%
+}
+
+100%{
+	 background-position: 100% 50%
+}	
+}
