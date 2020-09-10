@@ -1,8 +1,9 @@
 .banner {
-    width: 100vw;
-  height: auto;
-  margin:auto;
-  display:block
+   height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
     
   }
   

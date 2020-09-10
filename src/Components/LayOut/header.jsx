@@ -1,7 +1,11 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import Dropdown from '../DropDown/Dropdown'
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import {connect}  from 'react-redux'
+import {Toggle_hidden} from '../../Redux/cart/cart.actions.js'
+
 import './Layout.css'
 
 
@@ -10,7 +14,7 @@ import './Layout.css'
 
 
 
-const Header = () => {
+const Header = ({ToggleHidden, hidden}) => {
     
 
    return (<div>
@@ -18,7 +22,7 @@ const Header = () => {
 
     <Navbar collapseOnSelect expand="lg" bg="light" fixed='top' variant="light">
   <Navbar.Brand href="/">Zeez-Tha-Plug</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Toggle aria-controls="responsive-navbar-nav " />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
       
@@ -28,15 +32,29 @@ const Header = () => {
       <Nav.Link href="/login">Login </Nav.Link>
       <Nav.Link href='/contacts'>Contact Us</Nav.Link>
     </Nav>
-    <Nav.Link href="/cart"><ShoppingCartOutlinedIcon style={{color:'white'}} /></Nav.Link>
+    <ShoppingCartOutlinedIcon  onClick={ToggleHidden} style={{color:'grey'}} />
     
   </Navbar.Collapse>
 </Navbar>
+{ hidden? null :<Dropdown /> }
+{console.log(hidden)}
+
 </div>
+
+  
  
     </div>
     )
 }
 
 
-export default Header
+const mapDispatchToProps = (dispatch)=> ({
+  ToggleHidden:()=> dispatch(Toggle_hidden())
+})
+
+const mapStatetoProps = ({cart:{hidden}}) => ({
+
+  hidden
+})
+
+export default connect(mapStatetoProps, mapDispatchToProps)(Header)

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {  Switch, Route} from 'react-router-dom'
 import Homepage from './Pages/Homepage/homepage'
 import Contacts from './Pages/Contact/contact'
 import Header from './Components/LayOut/header'
@@ -40,19 +40,17 @@ function App() {
     <div>
   
     <Header />
-     <Router>
      <Switch>
      
      <Route exact path ='/'  component ={Homepage}/>
-     <Route exact path ='/contacts'  component ={Contacts}/>
-     <Route  exact path ='/checkout'  component ={CheckoutPage}/>
-     <Route  exact path ='/login'  component ={SignInPage}/>
-     <Route  exact path ='/signup'  component ={SignUpPage}/>
-     <Route  exact path ='/shop'  component ={shoppage}/>
+     <Route  path ='/contacts'  component ={Contacts}/>
+     <Route   exact path ='/checkout'  component ={CheckoutPage}/>
+     <Route   exact path ='/login'  component ={SignInPage}/>
+     <Route   exact path ='/signup'  component ={SignUpPage}/>
+     <Route   exact path ='/shop'  component ={shoppage}/>
      
      
       </Switch>
-      </Router>
       <StickyFooter />
      
   </div>

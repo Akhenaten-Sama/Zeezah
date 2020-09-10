@@ -18,3 +18,7 @@ export const CLEAR_CART =(item)=> ({
 })
 
 
+export const Toggle_hidden = ()=>({
+    type:CartActionTypes.TOGGLE_HIDDEN
+})
+
