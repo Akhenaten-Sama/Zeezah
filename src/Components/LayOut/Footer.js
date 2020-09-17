@@ -10,7 +10,7 @@ import CopyRight from './CopyRight'
 export default function StickyFooter() {
 
   return (
-    <div className={classes.root}>
+    <div >
         <Container maxWidth="sm">
         <Navbar sticky="bottom" >
           <Typography variant="body1">My sticky footer can be found here.</Typography>
