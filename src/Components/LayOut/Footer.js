@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from 'react-bootstrap'
+import Navbar from 'react-bootstrap/Navbar'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import CopyRight from './CopyRight'
