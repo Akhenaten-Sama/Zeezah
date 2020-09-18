@@ -1,35 +1,51 @@
 import React from 'react';
-import {useState} from '@hookstate/core'
 import FormInput from '../Form-input/Form-Input'
 import Grid from '@material-ui/core/Grid';
+import {connect} from 'react-redux'
+import {Details} from '../../Redux/cart/cart.selector'
+import {ADD_DETAILS} from '../../Redux/cart/cart.actions'
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import { DetailState } from '../MyContext/hookState';
+import {createStructuredSelector} from 'reselect'
 
 
 
-const AddressForm = ()=> {
-  const state = useState(DetailState)
 
-  const {firstName, lastName, city, states, zip,address1, address2} = state.get()
-  console.log(state.firstName.get())
-      
+class AddressForm extends React.Component {
 
 
+  
 
-  const handleChange = event => {
+  state ={ firstName: ' ',
+  lastName: ' ',
+  address1: ' ',
+  address2: ' ',
+  city:' ',
+  states:' ',
+  zip:' '}
+   
+  
+
+
+
+   handleChange = event => {
+    event.preventDefault()
     const { name, value } = event.target;
-        state.set(p=>({[name]: value }));
-        console.log(state[name].get())
+        this.setState({[name]: value} );
     }
 
+
+
+  render(){
+   const {SaveDetails, Details} = this.props
+    const {firstName, lastName, city, states, zip,address1, address2} = this.state
+      SaveDetails(this.state)
   return (
+
+
     <React.Fragment>
-    
-    
-    
     <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
@@ -42,7 +58,7 @@ const AddressForm = ()=> {
             label="First name"
             fullWidth
             value={firstName || ''}
-            onChange={handleChange}
+            onChange={this.handleChange}
             autoComplete="given-name"
           />
         </Grid>
@@ -54,7 +70,7 @@ const AddressForm = ()=> {
             label="Last name"
             fullWidth
             value={lastName || ''}
-            onChange={handleChange}
+            onChange={this.handleChange}
             autoComplete="family-name"
           />
         </Grid>
@@ -64,7 +80,7 @@ const AddressForm = ()=> {
             id="address1"
             name="address1"
             value={address1}
-            onChange={handleChange|| ''}
+            onChange={this.handleChange|| ''}
             label="Address line 1"
             fullWidth
             autoComplete="shipping address-line1"
@@ -77,7 +93,7 @@ const AddressForm = ()=> {
             label="Address line 2"
             fullWidth
             value={address2 || ''}
-            onChange={handleChange}
+            onChange={this.handleChange}
             autoComplete="shipping address-line2"
           />
         </Grid>
@@ -88,13 +104,13 @@ const AddressForm = ()=> {
             name="city"
             label="City"
             value={city|| ''}
-            onChange={handleChange}
+            onChange={this.handleChange}
             fullWidth
             autoComplete="shipping address-level2"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <FormInput id="state" name="state" onChange={handleChange}  value={states|| ''} label="State/Province/Region" fullWidth />
+          <FormInput id="state" name="states" onChange={this.handleChange}  value={states|| ''} label="State/Province/Region" fullWidth />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
@@ -103,13 +119,14 @@ const AddressForm = ()=> {
             name="zip"
             label="Zip / Postal code"
             fullWidth
-            onChange={handleChange}
+            onChange={this.handleChange}
             value={zip|| ''}
             
             autoComplete="shipping postal-code"
           />
         </Grid>
         <Grid item xs={12}>
+        
           <FormControlLabel
             control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
             label="Use this address for payment details"
@@ -123,8 +140,17 @@ const AddressForm = ()=> {
    
       
     </React.Fragment>
-  );
+  )
+    }
 }
 
+const mapDispatchToProps = dispatch => ({
+  SaveDetails:item => dispatch(ADD_DETAILS(item))
+})
 
-export default AddressForm
+const mapStateToProps = createStructuredSelector({
+  Details: Details
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddressForm)

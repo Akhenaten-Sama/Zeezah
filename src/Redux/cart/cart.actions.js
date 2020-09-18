@@ -22,3 +22,8 @@ export const Toggle_hidden = ()=>({
     type:CartActionTypes.TOGGLE_HIDDEN
 })
 
+export const ADD_DETAILS = (details)=>({
+    type:CartActionTypes.ADD_DETAILS,
+    payload:details
+})
+

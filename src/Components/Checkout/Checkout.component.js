@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
@@ -9,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography';
 import AddressForm from './DeliveryDetails.component';
 import Review from './Review';
+
 
 
 
@@ -64,7 +66,7 @@ function getStepContent(step) {
 
 
 
-export default function Checkout() {
+function Checkout({Details}) {
 
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0)
@@ -99,9 +101,10 @@ export default function Checkout() {
                   Thank you for your order.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order confirmation, and will
-                  send you an update when your order has shipped.
+                  Your order has been placed, check your email for receipt and further Instructions.
                 </Typography>
+
+                <button> Pay </button>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -117,6 +120,7 @@ export default function Checkout() {
                     color="primary"
                     onClick={handleNext}
                     className={classes.button}
+                    type='submit'
                   >
                     {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                   </Button>
@@ -129,5 +133,9 @@ export default function Checkout() {
     </React.Fragment>
   );
 }
+
+
+
+export default Checkout
 
 

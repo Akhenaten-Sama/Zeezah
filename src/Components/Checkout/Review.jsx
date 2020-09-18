@@ -1,8 +1,7 @@
 
 import React from 'react';
-import {useState} from '@hookstate/core'
 import { makeStyles } from '@material-ui/core/styles';
-import { CartItems, selectCartTotal}from '../../Redux/cart/cart.selector'
+import { CartItems, selectCartTotal, Details}from '../../Redux/cart/cart.selector'
 import {createStructuredSelector}  from 'reselect'
 import {connect} from 'react-redux'
 import Typography from '@material-ui/core/Typography';
@@ -11,7 +10,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import { ListItemAvatar, Avatar } from '@material-ui/core';
-import { DetailState } from '../MyContext/hookState';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,10 +24,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
- function Review({items, Total}) {
+ function Review({items, Total, Details}) {
   const classes = useStyles();
-  const state= useState(DetailState)
-  const {firstName,lastName, city, states, zip,address1, address2} = state.get()
+  const {firstName,lastName, city, states, zip,address1, address2} = Details
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -58,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
             Shipping
           </Typography>
           <Typography gutterBottom>{`${firstName} ${lastName}`}</Typography>
+          <Typography gutterBottom>{`${address1} ${address2}, ${city} ${states}`}</Typography>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
@@ -71,7 +69,9 @@ const useStyles = makeStyles((theme) => ({
 
 const mapStateToProps = createStructuredSelector({
   items:CartItems,
-  Total: selectCartTotal
+  Total: selectCartTotal,
+  Details:Details
 })
+
 
 export default connect(mapStateToProps)(Review)

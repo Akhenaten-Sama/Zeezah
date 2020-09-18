@@ -4,7 +4,18 @@ import { AddItem, RemoveItems} from './cart.utils';
 
 const INITIAL_STATE = {
     cartItems:[],
-    hidden:true
+    hidden:true,
+    details:
+        {
+        firstName: ' ',
+        lastName: ' ',
+        address1: ' ',
+        address2: ' ',
+        city:' ',
+        states:' ',
+        zip:' '
+    }
+
 
 }
 
@@ -31,6 +42,12 @@ const cartReducer = (state=INITIAL_STATE, action) => {
                             ...state,
                             hidden:!state.hidden
                         }
+                        case CartActionTypes.ADD_DETAILS:
+                            return{
+                            ...state,
+                            details:action.payload
+
+                            }
     
         default:
            return state;
