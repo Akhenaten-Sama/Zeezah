@@ -2,6 +2,10 @@
   .collection-page {
     display: flex;
     flex-direction: column;
+
+    @media screen  and (max-width:560px){
+      align-items: center;
+    }
   
     .title {
       font-size: 38px;
@@ -12,6 +16,12 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       grid-gap: 10px;
+      justify-self: center;
+      justify-items: center;
+    
+      @media screen  and (max-width:560px){
+        grid-template-columns: 1fr 1fr;
+      }
   
       & .collection-item {
         margin-bottom: 30px;
