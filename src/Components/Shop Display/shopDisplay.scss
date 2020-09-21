@@ -11,6 +11,8 @@
       font-size: 38px;
       margin: 43px auto 30px;
 
+      
+
     }
   
     .items {
@@ -21,7 +23,8 @@
       justify-items: center;
     
       @media screen  and (max-width:560px){
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap:10px;
       }
   
       & .collection-item {

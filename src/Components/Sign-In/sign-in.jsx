@@ -69,8 +69,8 @@ export default function SignInSide() {
 
     try {
         await auth.signInWithEmailAndPassword(email, password);
-        setEmail({ email: ''});
-        setPassword({password:''})
+        setEmail(email);
+        setPassword(password)
     } catch (error) {
         console.log(error);
     }
