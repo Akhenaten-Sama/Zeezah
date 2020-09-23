@@ -23,8 +23,8 @@
       justify-items: center;
     
       @media screen  and (max-width:560px){
-        grid-template-columns: 1fr;
-        gap:10px;
+      grid-template-columns: 40vw;
+        gap:5px;
       }
   
       & .collection-item {

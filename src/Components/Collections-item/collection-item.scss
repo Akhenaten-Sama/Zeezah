@@ -1,13 +1,15 @@
 .collection-item {
-    width: 40vw;
+    width: 23vw;
     display: flex;
     flex-direction: column;
     height: 350px;
     align-items: center;
     position: relative;
     
-    @media screen  and (max-width:560px){
-      width:40vw
+    @media screen  and (max-width:760px){
+      width:60vw;
+    
+      
     }
   
     .image {
@@ -55,8 +57,11 @@
       display: grid;
       grid-template-columns:1fr 1fr;
       overflow: hidden;
-      gap:2rem;
+      gap:1.5rem;
       font-size:14px;
+      @media screen  and (max-width:760px){
+        font-size: 12px;
+      }
   
       .name {
         width: 80%;
