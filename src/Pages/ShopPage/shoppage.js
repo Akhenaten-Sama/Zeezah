@@ -4,10 +4,18 @@ import {connect} from 'react-redux'
 import {fetchCollectionStartAsync} from '../../Redux/store/store.actions'
 import ShopOverviewContainer from '../../Components/ShopOverview/ShopOverviewComponent';
 
+
+
 const ShopPage = ({fetchCollectionStartAsync, match})=> {
     useEffect(() => {
         fetchCollectionStartAsync()
-        
+        var blocks = document.getElementsByClassName("collection-item")
+var container= document.getElementsByClassName("items")
+
+
+
+
+
         
     }, [])
 

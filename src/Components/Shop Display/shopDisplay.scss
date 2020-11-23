@@ -2,6 +2,7 @@
   .collection-page {
     display: flex;
     flex-direction: column;
+    margin-bottom: 4rem;
 
     @media screen  and (max-width:560px){
       align-items: center;

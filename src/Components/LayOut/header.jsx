@@ -6,7 +6,7 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import {connect}  from 'react-redux'
 import {Toggle_hidden} from '../../Redux/cart/cart.actions.js'
 
-import './Layout.css'
+import './layout.scss'
 
 
 

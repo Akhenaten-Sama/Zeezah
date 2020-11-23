@@ -12,7 +12,7 @@ function CopyRight() {
       <Typography variant="body2" color="textSecondary">
         {'Copyright © '}
         <Link color="inherit" href="https://material-ui.com/">
-          Your Website
+            Efunkunle Olalekan
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}
