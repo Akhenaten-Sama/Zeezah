@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {  Switch, Route} from 'react-router-dom'
 import Homepage from './Pages/Homepage/homepage'
+import DirectoryPage from './Pages/DirectoryPage/DirectoryPage'
 import Contacts from './Pages/Contact/contact'
 import Header from './Components/LayOut/header'
 import './App.css';
@@ -44,6 +45,7 @@ function App() {
      
      <Route exact path ='/'  component ={Homepage}/>
      <Route  path ='/contacts'  component ={Contacts}/>
+     <Route  path ='/directory'  component ={DirectoryPage}/>
      <Route   exact path ='/checkout'  component ={CheckoutPage}/>
      <Route   exact path ='/login'  component ={SignInPage}/>
      <Route   exact path ='/signup'  component ={SignUpPage}/>

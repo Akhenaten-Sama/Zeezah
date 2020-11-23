@@ -20,7 +20,8 @@ var container= document.getElementsByClassName("items")
     }, [])
 
    return ( <div className="shop-page">
-				<Route exact path={`${match.path}`} component={ShopOverviewContainer}/>
+        <Route exact path={`${match.path}`} component={ShopOverviewContainer}/>
+        
 				
 			</div>)
 }
