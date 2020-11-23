@@ -25,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   arrow:{
-    cursor:"pointer"
+    cursor:"pointer",
+    paddingLeft:"16px",
+    paddingRight:"16px",
   }
 }));
 
