@@ -9,7 +9,7 @@ export default function StickyFooter() {
   return (
     <footer className="footer" >
       
-    <h4 className='transparent'>&copy; Efunkunle Oluwaseun</h4>
+    <h6 className='transparent'>&copy; Efunkunle Oluwaseun</h6>
     <div className='social-container'>
     <div className="social">
     <a href='https://twitter.com/bombassin' >
