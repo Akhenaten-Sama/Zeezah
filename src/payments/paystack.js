@@ -1,10 +1,10 @@
 import React from 'react';
 import { PaystackConsumer} from 'react-paystack';
-import Button from '../../components/button/button'
+import Button from '../Components/button/button'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {Clear_Cart} from '../../Redux/cart/cart.actions'
-import '../../Redux/cart/cart.selectors'
+import {CLEAR_CART} from '../Redux/cart/cart.actions'
+
 
 
 
@@ -36,7 +36,7 @@ import '../../Redux/cart/cart.selectors'
     );
 };
 const mapDispatchToProps = (dispatch) => ({
-    clearCart: () => dispatch(Clear_Cart())
+    clearCart: () => dispatch(CLEAR_CART())
 })
 
 export default  withRouter(connect(null, mapDispatchToProps)(Paystack))

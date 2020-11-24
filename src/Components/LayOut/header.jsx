@@ -20,7 +20,7 @@ const Header = ({ToggleHidden, hidden}) => {
    return (<div>
     <div className='barnav'>
 
-    <Navbar collapseOnSelect expand="lg" bg="light" fixed='top' variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="light" sticky='top' variant="light">
   <Navbar.Brand href="/">Zeez-Tha-Plug</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav " />
   <Navbar.Collapse id="responsive-navbar-nav">

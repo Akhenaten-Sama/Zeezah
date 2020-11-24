@@ -4,14 +4,16 @@ height:10vh;
   width: 100%;
   padding-left: 1rem;
   padding-top:1rem;
+  margin-top: auto;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: relative;
+  bottom: 0;
   background:#f8f9fa;
   padding-bottom: 1rem;
-  bottom: 0;
+  margin-bottom: 0;
   
   
 

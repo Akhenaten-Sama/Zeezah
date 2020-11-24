@@ -1,5 +1,7 @@
 import React from 'react';
-
+import {connect} from 'react-redux'
+import {createStructuredSelector} from 'reselect'
+import { selectCartTotal} from '../../Redux/cart/cart.selector'
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
@@ -9,6 +11,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography';
 import AddressForm from './DeliveryDetails.component';
+import Paystack from '../../payments/paystack'
 import Review from './Review';
 
 
@@ -66,7 +69,7 @@ function getStepContent(step) {
 
 
 
-function Checkout({Details}) {
+function Checkout( {Total}) {
 
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0)
@@ -101,10 +104,10 @@ function Checkout({Details}) {
                   Thank you for your order.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order has been placed, check your email for receipt and further Instructions.
+                  Your order has been received, Proceed to payment to start place order.
                 </Typography>
 
-                <button> Pay </button>
+               <Paystack Total={Total}/>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -134,8 +137,11 @@ function Checkout({Details}) {
   );
 }
 
+const mapStateToProps = createStructuredSelector({
 
+	Total: selectCartTotal
+})
 
-export default Checkout
+export default connect(mapStateToProps)(Checkout);
 
 

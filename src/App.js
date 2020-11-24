@@ -11,6 +11,7 @@ import SignInPage from './Pages/SignUp page/signin'
 import StickyFooter from './Components/LayOut/Footer';
 import CheckoutPage from './Pages/Checkout/checkout';
 import shoppage from './Pages/ShopPage/shoppage';
+import DashboardPage from './Pages/Admin/Dashboard'
 
 function App() {
   
@@ -50,6 +51,7 @@ function App() {
      <Route   exact path ='/login'  component ={SignInPage}/>
      <Route   exact path ='/signup'  component ={SignUpPage}/>
      <Route   exact path ='/shop'  component ={shoppage}/>
+     <Route   exact path ='/admin'  component ={DashboardPage}/>
      
      
       </Switch>
