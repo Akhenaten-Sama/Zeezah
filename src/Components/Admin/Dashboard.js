@@ -21,6 +21,7 @@ import { mainListItems, secondaryListItems } from './ListItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import Newdoc from './newdoc';
 
 
 const drawerWidth = 240;
@@ -176,6 +177,12 @@ export default function Dashboard() {
             <Grid item xs={12}>
               <Paper className={classes.paper}>
                 <Orders />
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                
               </Paper>
             </Grid>
           </Grid>

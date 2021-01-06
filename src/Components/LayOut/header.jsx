@@ -29,7 +29,6 @@ const Header = ({ToggleHidden, hidden}) => {
     </Nav>
     <Nav>
       <Nav.Link href="/shop">Shop</Nav.Link>
-      <Nav.Link href="/login">Login </Nav.Link>
       <Nav.Link href='/contacts'>Contact Us</Nav.Link>
     </Nav>
     <ShoppingCartOutlinedIcon  onClick={ToggleHidden} style={{color:'grey'}} />

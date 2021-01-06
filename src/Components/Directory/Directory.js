@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {selectDirectorySections} from '../../Redux/Directory/directorySelector'
 import {createStructuredSelector} from 'reselect'
 import './directory.scss'
+import Newdoc from '../Admin/newdoc';
 
 import MenuItem from '../Menu-Item/Menu';
 
@@ -14,6 +15,8 @@ const Directory = ({sections}) => {
              {sections.map(({id, ...otherSectionProps}) =>(
                  <MenuItem  key={id} {...otherSectionProps}/>
              ))}
+               <Newdoc />
+
             </div>
         )
     
